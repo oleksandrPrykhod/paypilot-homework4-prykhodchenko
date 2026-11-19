@@ -1,0 +1,81 @@
+{
+  "profile": "clean",
+  "scenario_steps": 7,
+  "summarize_after": 2,
+  "prompt_version": "base.v1",
+  "inv_amount_red": 0,
+  "inv_code_red": 0,
+  "runs": [
+    {
+      "ref_amount": 240.0,
+      "ref_code": "goods_not_received",
+      "inv_amount": {
+        "level": 2,
+        "passed": true,
+        "failed_steps": []
+      },
+      "inv_code": {
+        "level": 1,
+        "passed": true,
+        "failed_steps": []
+      },
+      "steps": [
+        {
+          "step": 1,
+          "answer": "The reason code that fits is **goods_not_received**, since you paid for TX-0401 (EUR 240.00) and the goods did not arrive.\n\nI haven't opened a dispute. If you want to proceed, I'll first check whether TX-0401 is eligible under this reason code, and I'll only open the dispute if that check passes. Would you like me to do that?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 2,
+          "answer": "Yes. TX-0401 (EUR 240.00, dated 2026-07-20) is eligible for a **goods_not_received** dispute. It passed the reason code, transaction status, and time-window checks. The dispute window closes on **2026-10-18**.\n\nOpening a dispute can't be undone. Do you want me to open it now for EUR 240.00?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 3,
+          "answer": "Your daily transfer limit on the Tier 1 account is EUR 5,000.00. As of 2026-09-15 you have spent EUR 0.00 today, so EUR 5,000.00 remains available.\n\nFor reference, your monthly limit is EUR 50,000.00, with EUR 35.50 used so far, leaving EUR 49,964.50.\n\nThe limits tool reports transfer limits, not card-specific limits. If you need a separate card limit, I can search the knowledge base for it.\n\nAlso, the dispute on TX-0401 (EUR 240.00, goods not received) is still waiting for your confirmation. It is eligible and must be opened before 2026-10-18. Please tell me if you want me to proceed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 4,
+          "answer": "The knowledge base explains how the spread is applied, but it does not give the Tier 1 spread percentage or the USD mid rate, so I can't state the spread for USD.\n\nHere is how it works:\n- A conversion is charged at the mid-market rate, then the tier spread (a percentage of the gross converted amount) applies.\n- If the whole conversion fits within your remaining monthly free conversion allowance, no spread is charged.\n- Once the allowance is used up, the full tier spread applies.\n\nIf you tell me the EUR or USD amount you have in mind, I can run an exact quote showing the mid rate, spread, allowance used, and final amount.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 5,
+          "answer": "The charge is TX-0401, EUR 240.00 dated 2026-07-20, for goods you paid for but did not receive. The dispute eligibility check passed on 2026-09-15. The dispute window closes on 2026-10-18.\n\nNo dispute has been opened yet. The next step is your confirmation. Once I open it, I will:\n- Open a dispute on TX-0401 under the reason \"goods not received\"\n- Set the amount to EUR 240.00\n\nOpening a dispute cannot be undone, so please reply \"yes\" if you want me to proceed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 6,
+          "answer": "I have opened the dispute.\n\n- **Transaction:** TX-0401, dated 2026-07-20\n- **Amount:** EUR 240.00\n- **Reason:** Goods not received\n- **Dispute ID:** 1\n- **Status:** Open\n\nThe eligibility check passed again just before I opened it. The dispute is now open, so no further action is needed from you at this stage.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 7,
+          "answer": "Yes, the deadline was 2026-10-18, and that is 33 days after the eligibility check on 2026-09-15. However, you don't need to file again. Dispute ID 1 for TX-0401 (EUR 240.00, goods not received) is already open, so the filing is complete.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        }
+      ],
+      "run": 1,
+      "request_ids": [
+        "79733afcffb646a2",
+        "9cafaae41cfb4a9b",
+        "7ddce7e610e54387",
+        "e91e15b2d1694c91",
+        "26773dd3a1c14959",
+        "8022fcf1c6624708",
+        "e52abeda95ea49e0"
+      ],
+      "summarized_at": [
+        3
+      ]
+    }
+  ]
+}

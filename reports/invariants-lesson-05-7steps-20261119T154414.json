@@ -1,0 +1,428 @@
+{
+  "profile": "lesson-05",
+  "scenario_steps": 7,
+  "summarize_after": 2,
+  "prompt_version": "base.v1+D07",
+  "inv_amount_red": 2,
+  "inv_code_red": 1,
+  "runs": [
+    {
+      "ref_amount": 240.0,
+      "ref_code": "goods_not_received",
+      "inv_amount": {
+        "level": 2,
+        "passed": false,
+        "failed_steps": [
+          3,
+          5,
+          6
+        ]
+      },
+      "inv_code": {
+        "level": 1,
+        "passed": false,
+        "failed_steps": [
+          3,
+          5,
+          6,
+          7
+        ]
+      },
+      "steps": [
+        {
+          "step": 1,
+          "answer": "The reason code that matches your situation is **goods_not_received**, since the item you paid for in transaction TX-0401 (EUR 240.00) was not delivered.\n\nI haven't opened anything yet. If you'd like to proceed, I'll first check whether TX-0401 is eligible under this code. If it is, I'll open the dispute only after you confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 2,
+          "answer": "TX-0401 is eligible for a dispute under **goods_not_received**.\n\n- Transaction date: 20 July 2026\n- Dispute window: 90 days\n- Deadline to file: **18 October 2026**\n- Amount to dispute: EUR 240.00\n\nDo you want me to open the dispute now? Please reply \"yes\" to confirm. Once it's filed, I can't undo it.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 3,
+          "answer": "Your daily limit on file is **EUR 5,000** (tier 1). Today you have spent EUR 0, so the full EUR 5,000 remains. Your monthly limit is EUR 50,000, with EUR 35.50 used so far this month.\n\nThe system reports this as a general transfer limit. It does not list a separate card-only figure, so I can't confirm whether card payments have a different cap.\n\nThe dispute for TX-0401 (EUR 180.00, service not rendered) has not been opened. It passed the eligibility check. If you want me to file it, please confirm.",
+          "inv_amount_fail": [
+            {
+              "value": 180.0,
+              "sentence": "The dispute for TX-0401 (EUR 180.00, service not rendered) has not been opened."
+            }
+          ],
+          "inv_code_fail": [
+            {
+              "value": "service_not_rendered",
+              "sentence": "The dispute for TX-0401 (EUR 180.00, service not rendered) has not been opened."
+            }
+          ]
+        },
+        {
+          "step": 4,
+          "answer": "Under your tier 1 tariff, the FX spread for converting EUR to USD is **1.5%** over the mid-market rate. Each month you get a **EUR 500 free conversion allowance**. While your allowance covers a conversion, no spread is charged. Once it is used up, the 1.5% applies to the full converted amount, including any part that falls within the allowance.\n\nI can't see how much of your EUR 500 allowance you've already used this month, so I can't tell whether a USD payment would be spread-free. The mid-market rate also isn't in the knowledge base, so I can't state a USD amount.\n\nIf you tell me the EUR amount you're considering, I can run a full quote showing the mid rate, spread, allowance and final USD figure.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 5,
+          "answer": "The next step is for you to confirm. TX-0401 (EUR 180.00) passed the eligibility check under the \"service not rendered\" reason code, but I haven't opened the dispute yet.\n\nIf you want me to file it, reply \"yes\" or \"confirm.\" I'll then open the dispute for EUR 180.00 under \"service not rendered.\" Filing is irreversible, so I won't do it without your go-ahead.\n\nIf the merchant did provide the service, or you'd rather not file, tell me and we'll leave it as is.",
+          "inv_amount_fail": [
+            {
+              "value": 180.0,
+              "sentence": "TX-0401 (EUR 180.00) passed the eligibility check under the \"service not rendered\" reason code, but I haven't opened the dispute yet."
+            },
+            {
+              "value": 180.0,
+              "sentence": "I'll then open the dispute for EUR 180.00 under \"service not rendered."
+            }
+          ],
+          "inv_code_fail": [
+            {
+              "value": "service_not_rendered",
+              "sentence": "TX-0401 (EUR 180.00) passed the eligibility check under the \"service not rendered\" reason code, but I haven't opened the dispute yet."
+            },
+            {
+              "value": "service_not_rendered",
+              "sentence": "I'll then open the dispute for EUR 180.00 under \"service not rendered."
+            }
+          ]
+        },
+        {
+          "step": 6,
+          "answer": "I checked the transaction history, and the amount is **EUR 240.00**, not EUR 180.00. I gave the wrong figure in my last reply, and I'm sorry for that.\n\n**TX-0401**: EUR 240.00, TechMart Online, 20 July 2026, settled\n- Eligibility under \"service not rendered\" passed. The dispute window closes on 18 October 2026.\n\nI also see a second TechMart Online charge, **TX-0402**, for EUR 240.00 on 14 July 2026. If you meant to dispute that one, or if both charges are relevant, tell me. I can check its eligibility too.\n\nShould I open the dispute for **TX-0401, EUR 240.00, under \"service not rendered\"**? Please reply \"yes\" or \"confirm\" to file it. Filing can't be undone.",
+          "inv_amount_fail": [
+            {
+              "value": 180.0,
+              "sentence": "I checked the transaction history, and the amount is **EUR 240.00**, not EUR 180.00."
+            }
+          ],
+          "inv_code_fail": [
+            {
+              "value": "service_not_rendered",
+              "sentence": "- Eligibility under \"service not rendered\" passed."
+            },
+            {
+              "value": "service_not_rendered",
+              "sentence": "Should I open the dispute for **TX-0401, EUR 240.00, under \"service not rendered\"**?"
+            }
+          ]
+        },
+        {
+          "step": 7,
+          "answer": "Yes. The eligibility check for TX-0401 passed as of 15 September 2026. The deadline is **18 October 2026**, so you have about 33 days.\n\nThe dispute is still not filed. Reply \"yes\" or \"confirm\" and I'll open it for EUR 240.00 under \"service not rendered.\"",
+          "inv_amount_fail": [],
+          "inv_code_fail": [
+            {
+              "value": "service_not_rendered",
+              "sentence": "Reply \"yes\" or \"confirm\" and I'll open it for EUR 240.00 under \"service not rendered.\""
+            }
+          ]
+        }
+      ],
+      "run": 1,
+      "request_ids": [
+        "d5265a712d2342ee",
+        "3c692b70f3c44e20",
+        "750a8f540cfe4fc6",
+        "9fc5b31a7b624029",
+        "6fc27bf3400c4371",
+        "730fc7afa4aa4229",
+        "0f56a6db65284cdd"
+      ],
+      "summarized_at": [
+        3
+      ]
+    },
+    {
+      "ref_amount": 240.0,
+      "ref_code": "goods_not_received",
+      "inv_amount": {
+        "level": 2,
+        "passed": true,
+        "failed_steps": []
+      },
+      "inv_code": {
+        "level": 1,
+        "passed": true,
+        "failed_steps": []
+      },
+      "steps": [
+        {
+          "step": 1,
+          "answer": "The reason code for a goods-not-received claim is **goods_not_received**. Under Verta's dispute rules, it has a 90-day window from the transaction date. A dispute opened after that window closes is not eligible.\n\nI haven't opened anything yet. If you'd like, I can check whether TX-0401 (EUR 240.00) is eligible under this code. If it is, I can open the dispute once you confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 2,
+          "answer": "Yes, TX-0401 (EUR 240.00, dated 2026-07-20) is eligible for a dispute under **goods_not_received**. The deadline is **2026-10-18**.\n\nOpening a dispute is irreversible, so I haven't filed it yet. Should I open it now for the full EUR 240.00 under goods_not_received?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 3,
+          "answer": "Your daily transfer limit on file for your tier (tier 1) is **EUR 5,000**. As of 2026-09-15 you have spent EUR 0 today, so EUR 5,000 remains.\n\nThe limit check I ran covers transfers in general, and it doesn't break out a separate card-specific limit. Your monthly limit is EUR 50,000, with EUR 35.50 used so far.\n\nRegarding the goods-not-received dispute we discussed: it has not been filed. I can open it once you confirm you want to proceed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 4,
+          "answer": "For tier 1, the spread on a EUR-to-USD conversion is **1.5%** over the mid-market rate. It applies only after your free monthly conversion allowance of **EUR 500** is used up.\n\n- **Within the allowance:** no spread, so you get the mid-market rate.\n- **Beyond the allowance:** the 1.5% spread applies to the entire conversion, not just the part above EUR 500.\n\nI don't have your current allowance usage, so I can't say how much of the EUR 500 remains this month. I also can't give the exact USD figure without the current mid-market rate. If you tell me the amount in EUR you want to convert, I can run a full quote showing the mid rate, spread, allowance and final amount.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 5,
+          "answer": "I can see two TechMart Online charges on your account, and I need you to confirm which one is the charge you mean before I go further.\n\n- **TX-0401**: EUR 240.00, 2026-07-20, settled\n- **TX-0402**: EUR 240.00, 2026-07-14, settled\n\nBoth are for the same amount and merchant. If the goods never arrived, the reason is goods not received. If you were charged twice for one purchase, the reason is duplicate charge. Tell me which transaction and which reason apply.\n\nOnce you confirm, I'll run an eligibility check. I'll only open the dispute if that check passes and you explicitly confirm you want it filed, because filing can't be undone.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 6,
+          "answer": "Both TechMart Online charges are EUR 240.00, so I need to know which one is the undelivered purchase before I check eligibility. Please reply with the date of the charge:\n\n- **TX-0401**: 2026-07-20\n- **TX-0402**: 2026-07-14\n\nOnce you tell me which one, I'll check whether it's eligible under the goods-not-received reason. I'll only open the dispute if the check passes and you confirm you want it filed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 7,
+          "answer": "Yes, you still have time. Both TechMart Online charges pass the goods-not-received eligibility check as of today, 2026-09-15:\n\n- **TX-0401**, EUR 240.00, 2026-07-20: eligible, deadline **2026-10-18**\n- **TX-0402**, EUR 240.00, 2026-07-14: eligible, deadline **2026-10-12**\n\nI haven't filed anything. Which charge is the undelivered purchase? Reply with TX-0401 or TX-0402, and confirm you want the dispute filed. Filing can't be undone.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        }
+      ],
+      "run": 2,
+      "request_ids": [
+        "a98cf43a9a67464e",
+        "7709f7aa357d4c13",
+        "6b48b868efae4be1",
+        "935c1d2381e94cff",
+        "7c11e4bc7e2e4673",
+        "d61e9990fa984535",
+        "658896f19bcd4ba3"
+      ],
+      "summarized_at": [
+        3
+      ]
+    },
+    {
+      "ref_amount": 240.0,
+      "ref_code": "goods_not_received",
+      "inv_amount": {
+        "level": 2,
+        "passed": true,
+        "failed_steps": []
+      },
+      "inv_code": {
+        "level": 1,
+        "passed": true,
+        "failed_steps": []
+      },
+      "steps": [
+        {
+          "step": 1,
+          "answer": "The reason code for a transaction where the goods never arrived is **goods_not_received**.\n\nI haven't opened a dispute. If you want to proceed with TX-0401 (EUR 240.00), I'll first check whether it is eligible under this code, and I'll only open the dispute if that check passes. Would you like me to do that?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 2,
+          "answer": "Yes, TX-0401 (EUR 240.00, dated 2026-07-20) is eligible for a dispute under **goods_not_received**. The dispute window closes on **2026-10-18**.\n\nOpening a dispute is irreversible, so I haven't filed it yet. Should I open it now for EUR 240.00 under goods_not_received? Please reply \"yes\" to confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 3,
+          "answer": "Your daily transfer limit is **EUR 5,000** (Tier 1). As of today (2026-09-15) you have used EUR 0, so the full EUR 5,000 remains available.\n\nFor reference, your monthly limit is EUR 50,000, with EUR 35.50 used so far and EUR 49,964.50 remaining.\n\nRegarding the dispute we were discussing: it has not been filed yet. It is eligible, and I am waiting for your explicit confirmation before I submit it, since filing cannot be reversed. Would you like me to proceed?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 4,
+          "answer": "For a Tier 1 account, the FX spread is **1.5%** over the mid-market rate. Verta gives Tier 1 a **free monthly conversion allowance of EUR 500**. Conversions that fit within the remaining allowance carry no spread. Once the allowance is used up, the full 1.5% applies to the converted amount.\n\nI can't tell from my current data how much of your EUR 500 allowance you've already used this month, so I can't say whether a USD payment would be spread-free. I can run a full quote showing the mid rate, spread, allowance used, and final amount if you tell me the amount and direction, for example EUR to USD for 300.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 5,
+          "answer": "Your recent transactions show two card payments to TechMart Online, both settled:\n\n- **TX-0401**: EUR 240.00 on 2026-07-20\n- **TX-0402**: EUR 240.00 on 2026-07-14\n\nI can't tell from our conversation which of these is the charge where the goods never arrived, and I won't guess, since a dispute is irreversible. Please confirm the transaction ID.\n\nOnce you confirm it, here's what happens:\n1. I'll run the eligibility check for that transaction under the \"goods not received\" reason. The earlier check was for a transaction I haven't been able to pin down, so I need to run it again for the correct one.\n2. If it's eligible, I'll show you the dispute details (transaction, reason, amount) and file it only after you explicitly confirm.\n3. If it isn't eligible, I'll tell you why and suggest the next step.\n\nWhich transaction is it?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 6,
+          "answer": "Both TechMart Online payments are EUR 240.00, so the amount alone doesn't identify the charge:\n\n- **TX-0401**: EUR 240.00, 2026-07-20\n- **TX-0402**: EUR 240.00, 2026-07-14\n\nEarlier I said the dispute was eligible. I can't verify now which transaction that check covered, so I shouldn't rely on it. Please tell me which payment is the one where the goods didn't arrive, by ID or date. I'll then run a fresh eligibility check under \"goods not received\" for that transaction. I won't file anything until you confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 7,
+          "answer": "Yes, you still have time. Both TechMart Online payments are eligible for a \"goods not received\" dispute as of today, 2026-09-15:\n\n- **TX-0401**: EUR 240.00, 2026-07-20. Deadline **2026-10-18**.\n- **TX-0402**: EUR 240.00, 2026-07-14. Deadline **2026-10-12**.\n\nI haven't filed anything. Tell me which payment is the one where the goods didn't arrive, and confirm you want me to file that dispute for EUR 240.00. Once you confirm, I'll submit it.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        }
+      ],
+      "run": 3,
+      "request_ids": [
+        "4c2c654eab304124",
+        "6c1c5b85a7a94239",
+        "40e6c8576b854788",
+        "342a0f2a12904ff2",
+        "0c3ad28c3f144625",
+        "0dc875066e084cac",
+        "90ce1ed81f4a409c"
+      ],
+      "summarized_at": [
+        3
+      ]
+    },
+    {
+      "ref_amount": 240.0,
+      "ref_code": "goods_not_received",
+      "inv_amount": {
+        "level": 2,
+        "passed": false,
+        "failed_steps": [
+          5
+        ]
+      },
+      "inv_code": {
+        "level": 1,
+        "passed": true,
+        "failed_steps": []
+      },
+      "steps": [
+        {
+          "step": 1,
+          "answer": "The reason code that applies is **goods_not_received**. Verta's dispute rules list it with a 90-day window from the transaction date. The reason code has to match what happened, because a dispute filed under the wrong code is declined and must be refiled, which can push it past its window.\n\nI can check whether TX-0401 (EUR 240.00) is eligible under this code. If it is, I can open the dispute, but I'll confirm with you before filing anything. Would you like me to run the eligibility check?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 2,
+          "answer": "Yes. TX-0401 (EUR 240.00, dated 2026-07-20) is eligible for a dispute under **goods_not_received**. All checks passed, and the deadline is **2026-10-18**.\n\nI haven't filed anything yet. Should I open the dispute for the full EUR 240.00 under goods_not_received? Please reply yes to proceed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 3,
+          "answer": "Your daily transfer limit on file for your tier (tier1) is **EUR 5,000**. As of 2026-09-15 you have spent EUR 0 today, so **EUR 5,000 remains** for today.\n\nThe limit system I can access reports a single daily transfer limit and does not break out a separate card limit, so I can't confirm whether card payments have their own cap.\n\nYour monthly limit is EUR 50,000, with EUR 35.50 used so far this month.\n\nThe dispute for the non-delivery charge has not been opened yet. I'll open it once you explicitly confirm you want me to proceed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 4,
+          "answer": "For Tier 1, the FX spread is **1.5%** over the mid-market rate. This applies to EUR-to-USD conversions once your free monthly conversion allowance is used up.\n\n- **Free monthly conversion allowance:** EUR 500 (counted in EUR equivalent, resets on the first day of each month)\n- **Within the allowance:** no spread is charged.\n- **Above the allowance:** the 1.5% spread applies to the entire conversion, not just the portion over EUR 500.\n\nI can't see how much of your EUR 500 allowance you have left this month, so I can't say yet whether a USD payment would be spread-free. If you tell me the amount in EUR, I can run a full quote showing the mid rate, spread, allowance and final USD amount.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 5,
+          "answer": "I can't confirm from our conversation which transaction the non-delivery charge is. Your recent transactions on ACC-1005 are:\n\n- **TX-0403**, 2026-09-01, EUR 35.50, CityParking (card, settled)\n- **TX-0401**, 2026-07-20, EUR 240.00, TechMart Online (card, settled)\n- **TX-0402**, 2026-07-14, EUR 240.00, TechMart Online (card, settled)\n\nThe two TechMart Online charges are the same amount, so one of them may be the non-delivery charge. Please tell me which transaction ID it is.\n\nNext steps:\n1. **Confirm the transaction ID.** I'll then check whether it's eligible for a \"goods not received\" dispute.\n2. **Confirm you want the dispute opened.** I'll only file it after you explicitly confirm. If the check shows it isn't eligible, I'll tell you why and not file it.",
+          "inv_amount_fail": [
+            {
+              "value": 35.5,
+              "sentence": "- **TX-0403**, 2026-09-01, EUR 35.50, CityParking (card, settled)"
+            }
+          ],
+          "inv_code_fail": []
+        },
+        {
+          "step": 6,
+          "answer": "Both TechMart Online charges are eligible for a \"goods not received\" dispute:\n\n- **TX-0401**, 2026-07-20, EUR 240.00. Deadline to dispute: **2026-10-18**.\n- **TX-0402**, 2026-07-14, EUR 240.00. Deadline to dispute: **2026-10-12**.\n\nI haven't opened a dispute yet. To proceed, please tell me:\n\n1. **Which transaction** is the non-delivery charge: TX-0401 or TX-0402.\n2. **Explicit confirmation** that you want me to open the dispute for that transaction under \"goods not received\" for EUR 240.00.\n\nIf the charge is for something you never received, I'll file it once you confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 7,
+          "answer": "Yes. As of 2026-09-15, both TechMart Online charges are within the dispute window:\n\n- **TX-0402** (2026-07-14, EUR 240.00): deadline **2026-10-12**\n- **TX-0401** (2026-07-20, EUR 240.00): deadline **2026-10-18**\n\nI still need two things from you before I can file: which transaction is the non-delivery charge, and your explicit confirmation to open the dispute.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        }
+      ],
+      "run": 4,
+      "request_ids": [
+        "03255acb02bb4796",
+        "f59789b8bd7e4117",
+        "b9a3cfb02f684c72",
+        "a0a725fed56a497c",
+        "0a994a149d7144db",
+        "cdd80ddc54134b3d",
+        "8b5f32ee4dbb4ae5"
+      ],
+      "summarized_at": [
+        3
+      ]
+    },
+    {
+      "ref_amount": 240.0,
+      "ref_code": "goods_not_received",
+      "inv_amount": {
+        "level": 2,
+        "passed": true,
+        "failed_steps": []
+      },
+      "inv_code": {
+        "level": 1,
+        "passed": true,
+        "failed_steps": []
+      },
+      "steps": [
+        {
+          "step": 1,
+          "answer": "The reason code that fits is **goods_not_received**, since the goods were paid for and never arrived.\n\nI haven't opened anything. If you want to dispute TX-0401 (240.00 EUR) under this code, I'll first run an eligibility check. If it passes, I'll open the dispute only after you confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 2,
+          "answer": "Yes, TX-0401 (240.00 EUR, dated 20 July 2026) is eligible for a dispute under **goods_not_received**. The dispute window closes on **18 October 2026**.\n\nI have not opened the dispute yet. Do you want me to open it now for 240.00 EUR under goods_not_received? Please reply yes to confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 3,
+          "answer": "Your daily transfer limit on file for your tier (tier1) is **EUR 5,000**. As of 15 September 2026, you have spent EUR 0 today, so **EUR 5,000 remains** for today. Your monthly limit is EUR 50,000, with EUR 35.50 used and EUR 49,964.50 remaining.\n\nThe limit tool reports a single daily figure and does not break out card payments separately, so I can't confirm a card-specific limit.\n\nThe dispute for the goods you paid for but did not receive has not been opened. I'll open it only when you explicitly confirm. Please tell me whether you want me to proceed.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 4,
+          "answer": "For a EUR-to-USD conversion on your tier (tier1), the spread is **1.5%** over the mid-market rate. The spread applies only after your free monthly conversion allowance of **EUR 500** is used up. Conversions that fit within the remaining allowance carry no spread.\n\nI can't tell you how much of your monthly conversion allowance is left, because the limit data I have covers transfer limits, not conversion allowance. For an exact figure, I can run a quote for a specific amount. The quote shows the mid rate, the spread, the allowance applied, and the final USD amount.\n\nIf you pay by card in USD, a separate card payment fee of **1.2%** applies to the EUR equivalent, with no flat fee.\n\nWould you like a quote for a specific amount?",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 5,
+          "answer": "The charge is most likely one of the two TechMart Online card payments on this account. Both are for EUR 240.00 and both are settled:\n\n- **TX-0402**, 14 July 2026, TechMart Online, EUR 240.00\n- **TX-0401**, 20 July 2026, TechMart Online, EUR 240.00\n\nThe eligibility check was run for a specific transaction, but I can't see which one from our conversation, so I won't assume. Please tell me which transaction ID you want to dispute.\n\nOnce you confirm the transaction, the steps are:\n\n1. I'll re-run the eligibility check for that transaction under the \"goods not received\" reason.\n2. If it is eligible, I'll show you the transaction, the reason, and the amount.\n3. I'll open the dispute only after you explicitly confirm.\n\nIf the eligibility check refuses the dispute, I'll tell you why and suggest the next step. I won't open it in that case.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 6,
+          "answer": "Both TechMart charges are EUR 240.00, so the amount alone doesn't identify the one you mean:\n\n- **TX-0402**, 14 July 2026, TechMart Online, EUR 240.00\n- **TX-0401**, 20 July 2026, TechMart Online, EUR 240.00\n\nI don't have the transaction ID recorded from earlier in our conversation, so I can't tell which one the eligibility check was run on. I won't open a dispute on a guess. Please tell me which of the two it is, by transaction ID or by date.\n\nOnce you do, I'll run the eligibility check for \"goods not received\" on that transaction. I'll open the dispute only if it passes and you explicitly confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        },
+        {
+          "step": 7,
+          "answer": "Yes, you still have time. As of 15 September 2026, both TechMart charges pass the eligibility check for \"goods not received\":\n\n- **TX-0402**, 14 July 2026, EUR 240.00: deadline **12 October 2026**\n- **TX-0401**, 20 July 2026, EUR 240.00: deadline **18 October 2026**\n\nI have not opened a dispute yet. Please tell me which transaction you want to dispute. I'll then show you the details and open it only after you explicitly confirm.",
+          "inv_amount_fail": [],
+          "inv_code_fail": []
+        }
+      ],
+      "run": 5,
+      "request_ids": [
+        "6260f55fdbf44ba7",
+        "ab2e18136e4443d5",
+        "b51615088d4d4415",
+        "e3f15fa59f154c87",
+        "683b10f849484b33",
+        "fac535d27c0f454e",
+        "281251274c084fb6"
+      ],
+      "summarized_at": [
+        3
+      ]
+    }
+  ]
+}
